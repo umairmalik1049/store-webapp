@@ -13,6 +13,7 @@ const options = ["PC", "LED", "Mouse", "Cables", "Laptop", "Keyboard"];
 async function countCustomersFromDB() {
   try {
     let res = await axios.get("https://store-webapp-production-50b7.up.railway.app/data/customers/count");
+    // let res = await axios.get("http://localhost:3000/data/customers/count");
     return res.data;
   } catch (error) {
     console.log("ERROR: ", error);
@@ -111,6 +112,7 @@ function calcPrice(event) {
 async function getItemsFromDB() {
   try {
     let res = await axios.get("https://store-webapp-production-50b7.up.railway.app/data/items");
+    // let res = await axios.get("http://localhost:3000/data/items");
     return res.data;
   } catch (error) {
     console.log("ERROR: ", error);

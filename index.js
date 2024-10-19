@@ -16,10 +16,10 @@ app.use(express.static(path.join(__dirname, "public")));
 const PORT = process.env.PORT || 3000;
 
 // const connection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   database: "store",
-//   password: "qualo666",
+//   host: process.env.HOST,
+//   user: process.env.USER,
+//   database: process.env.DATABASE,
+//   password: process.env.PASSWORD,
 // });
 
 const connection = mysql.createConnection({

@@ -182,3 +182,125 @@ input[type="number"]::-webkit-outer-spin-button {
 .optBtns:hover {
   background-color: #111111;
 }
+
+/*---------------------------------*/
+/*--------- Media Queries ---------*/
+/*---------------------------------*/
+
+/* Tablet and below (768px) */
+@media (max-width: 768px) {
+  #mainForm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #leftBox, #rightBox {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    flex-direction: column; /* Ensure child boxes stack vertically */
+  }
+
+  #leftBox h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* Adjust the table inputs */
+  #myTable tbody tr td input,
+  #myTable tfoot tr th input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Stack table cells vertically */
+  #myTable tbody tr {
+    display: flex;
+    flex-direction: column; /* Stack td elements in a column layout */
+    align-items: flex-start;
+  }
+
+  #myTable tbody tr td {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  #myTable tbody tr td input {
+    width: 100%; /* Ensure input fields take full width of td */
+    margin: 4px 0;
+  }
+
+  /* Stack buttons vertically */
+  #rightBox #moreOpt {
+    flex-direction: column;
+  }
+
+  .optBtns {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Ensure that the table does not overflow horizontally */
+  #rightBox #tableBox {
+    height: auto;
+    overflow-x: auto;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  #mainForm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #leftBox, #rightBox {
+    width: 100%;
+    padding: 5px;
+    flex-direction: column; /* Ensure child boxes stack vertically */
+  }
+
+  #leftBox h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  #myTable tbody tr td input,
+  #myTable tfoot tr th input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  /* Adjust table layout for smaller screens */
+  #myTable tbody tr {
+    display: flex;
+    flex-direction: column; /* Stack td elements vertically */
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  #myTable tbody tr td {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  #myTable tbody tr td input {
+    width: 100%; /* Full width of td */
+  }
+
+  /* Stack buttons with more space */
+  #rightBox #moreOpt {
+    flex-direction: column;
+  }
+
+  .optBtns {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #rightBox #tableBox {
+    height: auto;
+    overflow-x: auto;
+  }
+}
