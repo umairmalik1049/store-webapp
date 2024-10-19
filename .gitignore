@@ -1,0 +1,13 @@
+# Node modules folder
+/node_modules/
+
+# Ignore all .txt files
+*.txt
+
+# Ignore all .png files (optional, if you want to ignore all PNGs)
+*.png
+
+# Ignore all .sql files (optional, if you want to ignore all SQL files)
+*.sql
+
+# Ignore any other files or directories as needed

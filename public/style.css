@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-1: "Roboto", sans-serif;
+  --font-2: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-1);
+}
+
+/*-----------------------------*/
+/*--------- Main Form ---------*/
+/*-----------------------------*/
+
+#mainForm {
+  display: flex;
+  height: 100vh;
+  /* background-color: green; */
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/*-----------------------------*/
+/*---------- Left Box ---------*/
+/*-----------------------------*/
+
+#leftBox {
+  width: 30%;
+  height: 100%;
+  /* background-color: lightblue; */
+}
+
+#leftBox h1 {
+  font-size: 2.6rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  /* background-color: lightcoral; */
+}
+
+#leftBox div {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  /* background-color: red; */
+}
+
+#leftBox #invoice {
+  margin-top: 4rem;
+}
+
+#leftBox div input {
+  width: 14rem;
+  height: 2rem;
+  padding: 0 6px;
+  font-size: 14px;
+  margin-top: 8px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 4px;
+}
+
+#leftBox div:nth-of-type(3) input:focus,
+#leftBox div:nth-of-type(4) input:focus {
+  border: 1px solid black;
+}
+
+/*-----------------------------*/
+/*--------- Right Box ---------*/
+/*-----------------------------*/
+
+#rightBox {
+  width: 70%;
+  height: 100%;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#rightBox #tableBox {
+  height: 94%;
+  overflow: auto;
+  background-color: rgb(234, 234, 234);
+}
+
+#rightBox #tableBox #myTable {
+  width: 100%;
+  border-spacing: 0;
+}
+
+#myTable thead tr {
+  color: white;
+  text-align: left;
+  background-color: rgb(31, 31, 31);
+}
+
+#myTable thead tr th {
+  padding: 10px;
+}
+
+#myTable tbody tr td {
+  padding-left: 10px;
+}
+
+#myTable tbody tr td input {
+  width: 100%;
+  height: 2rem;
+  padding: 0 6px;
+  font-size: 14px;
+  margin: 4px 0;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 4px;
+}
+
+#myTable tbody tr td:nth-of-type(1) input:focus,
+#myTable tbody tr td:nth-of-type(2) input:focus {
+  border: 1px solid black;
+}
+
+#myTable tbody tr td input[name="itemName[]"] {
+  width: 34rem;
+}
+
+#myTable tbody tr td:nth-of-type(4) {
+  padding-right: 6px;
+}
+
+#myTable tfoot tr th {
+  padding-left: 10px;
+}
+
+#myTable tfoot tr th input {
+  width: 100%;
+  height: 2rem;
+  margin: 4px 0;
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 4px;
+}
+
+#myTable tfoot tr th:nth-of-type(2) {
+  padding-right: 6px;
+}
+
+/*------- More Options -------*/
+
+#rightBox #moreOpt {
+  padding: 8px 4px;
+}
+
+.optBtns {
+  border: 2px solid #242424;
+  background-color: #242424;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem 0.5rem 0.7rem;
+  transition: all ease-in-out 0.1s;
+  font-size: 14px;
+}
+
+.optBtns span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+.optBtns:hover {
+  background-color: #111111;
+}
