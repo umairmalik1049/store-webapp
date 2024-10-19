@@ -11,3 +11,5 @@
 *.sql
 
 # Ignore any other files or directories as needed
+
+.env

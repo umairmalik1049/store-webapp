@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const mysql = require("mysql2");
 const { v4: uuidv4 } = require("uuid");
+require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
