@@ -14,12 +14,29 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = 3000;
 
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   database: "store",
+//   password: "qualo666",
+// });
+
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "store",
-  password: "qualo666",
+  host: process.env.DB_HOST, // Use the environment variable for DB host
+  user: process.env.DB_USER, // Your DB username
+  password: process.env.DB_PASSWORD, // Your DB password
+  database: process.env.DB_NAME, // Your DB name
+  port: process.env.DB_PORT || 3306 // Optional: default to 3306 if not specified
 });
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+  } else {
+    console.log('Connected to the database!');
+  }
+});
+
 
 // ------------------------------------
 // ------------ Home Route ------------
