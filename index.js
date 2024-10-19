@@ -39,40 +39,34 @@ connection.connect((err) => {
 });
 
 // Query to create the tables
-const tbQuery = `
-CREATE TABLE items (
-	id VARCHAR(50) UNIQUE NOT NULL,
-    itemsName VARCHAR(60) NOT NULL,
-    rate INT NOT NULL,
-    quantitySold INT DEFAULT 0
-);
-
-INSERT INTO items
-(id, itemsName, rate)
-VALUES
-("1", "PC", 15000),
-("2", "LED", 5000),
-("3", "Mouse", 500),
-("4", "Cables", 200),
-("5", "Laptop", 55000),
-("6", "Keyboard", 1200);
-
-CREATE TABLE customers (
-	id VARCHAR(50) UNIQUE NOT NULL,
-    date VARCHAR(50) NOT NULL,
-    customerName VARCHAR(50) NOT NULL,
-    phone VARCHAR(20) DEFAULT "undefined",
-    totalBill VARCHAR(50) NOT NULL,
-    buyItemsIds VARCHAR(100) NOT NULL
-);
-`;
+const tbQuery1 = `CREATE TABLE items (id VARCHAR(50) UNIQUE NOT NULL, itemsName VARCHAR(60) NOT NULL, rate INT NOT NULL, quantitySold INT DEFAULT 0)`;
 
 // Execute the query to create tables
-connection.query(tbQuery, (err, results) => {
-  if (err) {
-    console.error("Error creating tables:", err);
+connection.query(tbQuery1, (err1, result1) => {
+  if (err1) {
+    console.error("Query 1 (Faild):", err1);
   } else {
-    console.log("Tables created successfully:", results);
+    console.log("Query 1 (Successful):", result1);
+
+    const tbQuery2 = `INSERT INTO items (id, itemsName, rate) VALUES ("1", "PC", 15000), ("2", "LED", 5000), ("3", "Mouse", 500), ("4", "Cables", 200), ("5", "Laptop", 55000), ("6", "Keyboard", 1200)`;
+
+    connection.query(tbQuery2, (err2, result2) => {
+      if (err2) {
+        console.error("Query 2 (Faild):", err2);
+      } else {
+        console.log("Query 2 (Successful):", result2);
+
+        const tbQuery3 = `CREATE TABLE customers (id VARCHAR(50) UNIQUE NOT NULL, date VARCHAR(50) NOT NULL, customerName VARCHAR(50) NOT NULL, phone VARCHAR(20) DEFAULT "undefined", totalBill VARCHAR(50) NOT NULL, buyItemsIds VARCHAR(100) NOT NULL);`;
+
+        connection.query(tbQuery3, (err3, result3) => {
+          if (err3) {
+            console.error("Query 3 (Faild):", err3);
+          } else {
+            console.log("Query 3 (Successful):", result3);
+          }
+        });
+      }
+    });
   }
   connection.end(); // Close the connection
 });
